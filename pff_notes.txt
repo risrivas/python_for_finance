@@ -1,0 +1,154 @@
+
+##############################
+# basic operations with conda
+##############################
+# installing Python x.x
+conda install python=x.x
+conda install -y python=x.x
+
+# updating Python
+conda update python
+conda update -y python
+
+# installing a package
+conda install $package
+
+# updating a package
+conda update $package
+
+# removing a package
+conda remove $package
+
+# updating conda itself
+conda update conda
+
+# searching for packages
+conda search $package
+
+# list installed packages
+conda list
+
+# install multiple packages at once
+conda install -y ipython matplotlib pandas pytables scikit-learn scipy
+
+# create a virtual env
+conda create --name $env_name
+
+# activating an env
+conda activate $env_name
+
+# deactivate an env
+conda deactivate $env_name
+
+# remove an env
+conda env remove --name $env_name
+
+# exporting to an env file
+conda env export > $file_name
+
+# creating an env from a file
+conda env create -f $file_name
+
+# listing all envs
+conda info --envs
+conda env list
+
+---------------------
+
+# example
+conda create --name py27 python=2.7
+conda activate py27
+conda install ipython
+ipython
+
+------------------
+
+###########
+## Docker
+###########
+- create install.sh and Dockerfile
+- build the image
+docker build -t py4fi:basic .
+
+# image is created in macos
+$ docker images
+REPOSITORY          TAG                 IMAGE ID            CREATED             SIZE
+py4fi               basic               05f8ec61ebdb        7 months ago        1.16GB
+ubuntu              latest              26b77e58432b        7 months ago        72.9MB
+
+# docker command to run - default command is "ipython"
+docker run -it py4fi:basic
+
+# exit from running container, type exit
+
+# just exit from running container without killing it
+Ctrl-PQ
+
+# check which containers are running
+docker ps
+
+# attaching back to the running containers
+docker attach $container_id
+
+# remove the container
+docker rm $container_id
+
+# docker command to run bash shell
+docker container run -it py4fi:basic /bin/bash
+
+# docker command to remove image
+docker image rm $image_id
+docker rmi $image_id
+
+####### advanced docker image
+docker build -t py4fi:adv .
+docker container run -it py4fi:adv /bin/bash
+
+
+##################################
+# Basic Data Types and Structures
+##################################
+- data types
+int, float, bool, str
+
+- data structures
+list, set, tuple, dict
+
+- everything is object
+
+## Integers
+- using ipython (tab completion) =>
+
+In [1]: a = 10
+
+In [2]: type(a)
+Out[2]: int
+
+In [3]: a.bit_length()
+Out[3]: 4
+
+In [4]: a = 100000
+
+In [5]: a.bit_length()
+Out[5]: 17
+
+In [7]: googol = 10 ** 100
+
+In [8]: googol
+Out[8]: 10000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000
+
+In [9]: googol.bit_length()
+Out[9]: 333
+
+
+## Floats
+
+
+
+
+
+
+
+
+
+
