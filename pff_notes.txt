@@ -1,3 +1,7 @@
+#####################
+# Python for Finance
+#####################
+
 
 ##############################
 # basic operations with conda
@@ -102,6 +106,7 @@ docker rmi $image_id
 
 ####### advanced docker image
 docker build -t py4fi:adv .
+docker container run -it py4fi:adv
 docker container run -it py4fi:adv /bin/bash
 
 
@@ -116,39 +121,152 @@ list, set, tuple, dict
 
 - everything is object
 
-## Integers
+###########
+# Integers
+###########
+- python integers can be arbitrarily large:
+interpreter simply uses as many bits/bytes as needed to represent the number
+
 - using ipython (tab completion) =>
-
 In [1]: a = 10
-
 In [2]: type(a)
 Out[2]: int
-
 In [3]: a.bit_length()
 Out[3]: 4
-
 In [4]: a = 100000
-
 In [5]: a.bit_length()
 Out[5]: 17
-
 In [7]: googol = 10 ** 100
-
 In [8]: googol
 Out[8]: 10000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000
-
 In [9]: googol.bit_length()
 Out[9]: 333
 
+#########
+# Floats
+#########
+- adding a dot to an int makes it float => 1. and 1.0 = both are floats
+- lose precisions, example:
+In [2]: b = 0.35
+In [3]: type(b)
+Out[3]: float
+In [4]: b + 0.1
+Out[4]: 0.44999999999999996
 
-## Floats
+- reason for this inaccuracy is that float is represented in binary form internally
+- a decimal number 0 < n < 1 is a series of form: n = x/2 + y/4 + z/8 + .....
+- as only finite number of bits are available to represent an infinite series of n => inaccuracies happen
+example:
+a) n = 0.5, in binary = 1/2
+In [5]: c = 0.5
+In [6]: c.as_integer_ratio()
+Out[6]: (1, 2)
+
+b) n = 0.35, in binary = 7/20
+In [7]: b = 0.35
+In [8]: b.as_integer_ratio()
+Out[8]: (3152519739159347, 9007199254740992)
+
+- precision is dependent on the number of bits used to represent the number
+- default: IEEE 754 = double-precision standard, ie 64 bits => 15-digit relative accuracy
+
+# to avoid precision inaccuracy, use decimal
+- module decimal provides an arbitrary-precision floating point number object
+- in finance, its important to ensure high precision and to go beyond the 64-bit double-precision standard
+
+- example
+In [9]: import decimal
+In [10]: from decimal import Decimal
+In [11]: decimal.getcontext()
+Out[11]: Context(prec=28, rounding=ROUND_HALF_EVEN, Emin=-999999, Emax=999999, capitals=1, clamp=0, flags=[], traps=[InvalidOperation, DivisionByZero, Overflow])
+In [12]: d = Decimal(1)/Decimal(11)
+In [13]: d
+Out[13]: Decimal('0.09090909090909090909090909091')
+
+- default precision is 28, which can be changed
+In [14]: decimal.getcontext().prec=4
+In [16]: e = Decimal(1)/Decimal(11)
+In [17]: e
+Out[17]: Decimal('0.09091')
 
 
+###########
+# Booleans
+###########
+- data type is called as "bool", values: True, False
+- complete list of python keywords:
+In [18]: import keyword
+In [19]: keyword.kwlist
+Out[19]:
+['False',
+ 'None',
+ 'True',
+ '__peg_parser__',
+ 'and',
+ 'as',
+ 'assert',
+ 'async',
+ 'await',
+ 'break',
+ 'class',
+ 'continue',
+ 'def',
+ 'del',
+ 'elif',
+ 'else',
+ 'except',
+ 'finally',
+ 'for',
+ 'from',
+ 'global',
+ 'if',
+ 'import',
+ 'in',
+ 'is',
+ 'lambda',
+ 'nonlocal',
+ 'not',
+ 'or',
+ 'pass',
+ 'raise',
+ 'return',
+ 'try',
+ 'while',
+ 'with',
+ 'yield']
+
+- keywords: and, or, not are used for combining boolean expressions
+In [20]: (4 > 3) and (2>3)
+Out[20]: False
+In [21]: (4 > 3) or (2>3)
+Out[21]: True
+In [22]: not((4 > 3) or (2>3))
+Out[22]: False
+In [23]: not((4 > 3) and (2>3))
+Out[23]: True
+In [24]: (4 > 3) and not(2>3)
+Out[24]: True
+
+- True is int value 1 and False is 0
+In [25]: int(True)
+Out[25]: 1
+In [26]: int(4>3)
+Out[26]: 1
+In [27]: int(4<3)
+Out[27]: 0
+In [28]: float(True)
+Out[28]: 1.0
+In [29]: bool(-2)
+Out[29]: True
+In [30]: bool(0.0)
+Out[30]: False
+In [31]: bool(10.4546)
+Out[31]: True
 
 
-
-
-
+##########
+# Strings
+##########
 
 
 
