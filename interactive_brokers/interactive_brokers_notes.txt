@@ -1,0 +1,15 @@
+################
+# Introduction
+################
+- using IB's native IPs to connect to IB's platform
+- extracting data, performing technical analysis, order management
+- performing fundamental analysis
+- backtesting strategies
+- deploying trading strategies
+- streaming tick level data
+
+# install trading workstation (TWS) and trading API
+
+# demo account
+my gmail id
+
