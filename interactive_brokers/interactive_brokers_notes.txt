@@ -8,8 +8,65 @@
 - deploying trading strategies
 - streaming tick level data
 
-# install trading workstation (TWS) and trading API
+# install from IB:
+trading workstation (TWS)
+trading API
+IB Gateway (50% lighter than TWS)
 
 # demo account
 my gmail id
+srivaris1
+passwd - my gmail account
+
+# usual API architecture
+Trading Application (code / script) <==> Broker's servers (get data/send orders etc)
+
+- in IB API architecture, there is a middleman TWS / IBG (IB Gateway) in between
+Trading Application (code / script) <==> TWS / IBG <==> IB servers (get data/send orders etc)
+
+- IB does not have HTTP REST API interface
+
+# create a new virtual env
+conda create --name quant python=3.8
+conda env list
+conda activate quant
+conda install -c anaconda spyder
+
+- launch spyder
+spyder
+spyder --new-instance
+
+- deactivate and come out of virtual env
+conda deactivate
+
+- install the packages only used as mentioned
+
+# install IB python client
+cd ~/Downloads/twsapi_macunix.976.01 2/IBJts/source/pythonclient
+python setup.py install
+
+
+# TWS/IB Gateway API Configuration settings
+- need to check "Enable ActiveX and Socket Clients" option
+- this is required to enable TWS/IBG to listen to API calls on a given port
+
+- need to enter the correct port number
+- TWS Live Trading: 7496
+- TWS Paper Trading: 7497
+- IB Gateway Live Trading: 4001
+- IB Gateway Paper Trading: 4002
+
+- check "Read Only API" if don't want to place/modify trades accidentally
+- not relevant for paper trading account
+
+- launch TWS -> File -> Global Configuration -> API -> Settings
+- launch IB Gateway -> chose IB API -> Configure -> API -> Settings
+
+
+###########################
+# Advanced Python Concepts
+###########################
+
+## OOP Basics 1
+
 
