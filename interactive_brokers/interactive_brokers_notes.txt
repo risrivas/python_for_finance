@@ -68,5 +68,7 @@ python setup.py install
 ###########################
 
 ## OOP Basics 1
+- demo script: oop1.py
+- use dir(float) to get all attributes and methods in float class
 
 
