@@ -67,8 +67,24 @@ python setup.py install
 # Advanced Python Concepts
 ###########################
 
-## OOP Basics 1
+# OOP Basics
 - demo script: oop1.py
 - use dir(float) to get all attributes and methods in float class
+
+# OOP inheritance
+- demo script: oop2.py
+
+# Threads in python
+- demo script: threads.py
+- useful resource:
+https://realpython.com/python-memory-management/
+
+- basic syntax to create thread and start
+thr1 = threading.Thread(target=randNumGen) # randNumGen is a function and dont use randNumGen()
+thr1.start()
+
+
+
+
 
 
