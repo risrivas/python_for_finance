@@ -1,0 +1,81 @@
+###############
+# Introduction
+###############
+
+# What is API Trading?
+no terminal - can directly connect to the broker using python algo / code
+
+# Advantages
+- cheaper
+- faster
+- scalable
+- a human eye can not monitor more than 3 stocks + screens + charts
+API trading can automate all this
+
+# Disadvantages
+- requires basic coding proficiency
+- learning curve
+
+# Alpaca API Trading
+- API only broker
+- Intergration with TradingView for charting
+- Commission free trading
+- Very nice and easy to use API architecture (combination of REST and websocket frameworks)
+- Paper trading account for testing
+- Real-time market data for both paper trading and live trading
+- Can only trade US stocks for now
+- Only for US residents
+  - they are now allowing non US residents to open accounts (minimum $30K deposit)
+  - paper trading account can be opened by anyone
+  - Businesses need $30K deposit to open trading account
+  - LATEST: https://alpaca.markets/learn/live-trading-account-non-us/
+
+
+# Paper account
+user: gmail account
+endpoint = https://paper-api.alpaca.markets
+
+
+#####################
+# How does API work?
+#####################
+- API stands for Application Programming Interface
+- Think of API as a pipeline (backdoor entry) to the website
+- Many websites/applications provide public APIs which you can use to connect to the website programmatically
+- Can use either HTTP/REST or websocket architecture
+
+## HTTP Connection (Request / Response)
+Client <--> Port/socket connection : HTTP GET/POST <--> Server
+
+- High Level Architecture
+  Socket connection is established after handshake
+  HTTP GET request sent by client
+  Server checks the sanctity of the request
+  Server responds to request and transfer data
+  Connection is closed
+
+- Pull mechanism - Client (browser) needs to pull information whenever required
+- Significant overhead in opening and closing socket connections
+- Works well simple data transfers for but not practical for applications like market data streaming
+
+
+## Websocket Connection (Streaming)
+Client <--> Port/socket connection <--> Server
+
+- High Level Architecture
+  Socket connection is established
+  Bidirectional transfer of messages
+  Connection stays open until explicitly closed
+
+- Data pushed to the client whenever made available
+- Persistent connection
+- Used mostly for real-time applications such as market data streaming
+
+
+# Demo code - api0.py
+- use requests module
+- requests.get(endpoint) => this is HTTP GET and Response object is returned
+
+
+
+
