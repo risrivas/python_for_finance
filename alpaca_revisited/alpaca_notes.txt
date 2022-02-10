@@ -71,11 +71,22 @@ Client <--> Port/socket connection <--> Server
 - Persistent connection
 - Used mostly for real-time applications such as market data streaming
 
-
 # Demo code - api0.py
 - use requests module
 - requests.get(endpoint) => this is HTTP GET and Response object is returned
 
+
+######################
+# Historical Data API
+######################
+- market data api (different than trading api)
+https://data.alpaca.markets/v2
+
+# Bars
+https://alpaca.markets/docs/api-references/market-data-api/stock-pricing-data/historical/#bars
+
+GET /v2/stocks/{symbol}/bars
+GET /v2/stocks/bars
 
 
 
