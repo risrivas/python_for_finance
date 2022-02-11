@@ -19,16 +19,32 @@ headers = json.loads(open("key.txt", 'r').read())
 
 symbol = "XLRE"
 params = {
-    "start": "2022-02-08T14:01:00Z",
+    "start": "2022-02-09T14:01:00Z",
     "limit": 200,
     # "end" : "2022-02-08T16:01:00Z",
     "timeframe": "15Min"
 }
 
-# single bar for single symbol
+# single symbol
 bar_url = endpoint + f"/stocks/{symbol}/bars"
 
 r = requests.get(bar_url, headers=headers, params=params)
 
 # r.text
 data = r.json()
+
+
+# multiple stocks
+multi_bars_url = endpoint + "/stocks/bars"
+
+multi_params = {
+    "symbols": "AAPL,AMZN,QQQ",
+    "start": "2022-02-09T14:01:00Z",
+    "limit": 200,
+    # "end" : "2022-02-08T16:01:00Z",
+    "timeframe": "15Min"
+}
+
+r_m = requests.get(multi_bars_url, headers=headers, params=multi_params)
+
+data_m = r_m.json()

@@ -85,7 +85,11 @@ https://data.alpaca.markets/v2
 # Bars
 https://alpaca.markets/docs/api-references/market-data-api/stock-pricing-data/historical/#bars
 
+- single stock
 GET /v2/stocks/{symbol}/bars
+
+- multiple stocks
+https://alpaca.markets/docs/api-references/market-data-api/stock-pricing-data/historical/#multi-bars
 GET /v2/stocks/bars
 
 

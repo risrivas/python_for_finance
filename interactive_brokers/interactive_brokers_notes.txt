@@ -9,9 +9,10 @@
 - streaming tick level data
 
 # install from IB:
-trading workstation (TWS)
-trading API
-IB Gateway (50% lighter than TWS)
+- trading workstation (TWS)
+- trading API
+- IB Gateway (50% lighter than TWS)
+- can also download IBKR Mobile
 
 # demo account
 my gmail id
@@ -41,16 +42,17 @@ conda deactivate
 
 - install the packages only used as mentioned
 
-# install IB python client
+## install IB python client
+conda activate quant
 cd ~/Downloads/twsapi_macunix.976.01 2/IBJts/source/pythonclient
 python setup.py install
 
 
-# TWS/IB Gateway API Configuration settings
+## TWS/IB Gateway API Configuration settings
 - need to check "Enable ActiveX and Socket Clients" option
 - this is required to enable TWS/IBG to listen to API calls on a given port
 
-- need to enter the correct port number
+# need to enter the correct port number
 - TWS Live Trading: 7496
 - TWS Paper Trading: 7497
 - IB Gateway Live Trading: 4001
@@ -61,6 +63,10 @@ python setup.py install
 
 - launch TWS -> File -> Global Configuration -> API -> Settings
 - launch IB Gateway -> chose IB API -> Configure -> API -> Settings
+
+- Enable ActiveX and Socket Clients
+- Logging Level = warning
+- Allow connections from local host only
 
 
 ###########################
