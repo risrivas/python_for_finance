@@ -18,6 +18,10 @@ Created on Thu Jan 27 05:07:13 2022
 #
 # =============================================================================
 
+import os
+
+os.chdir("/Users/tanvimohan/Desktop/algo_trading/python_for_finance/interactive_brokers")
+
 
 class employee:
     def __init__(self, name="Tim", emp_id=3452, exp=6, dept="R&D"):

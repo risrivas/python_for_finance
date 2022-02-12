@@ -7,17 +7,21 @@ Created on Sun Jan 30 08:26:41 2022
 """
 
 import threading
-import numpy as np
 import time
 
 
-def randNumGen():
-    for a in range(15):
-        print(np.random.randint(1, 1000))
-        time.sleep(1)
+def NumGen():
+    for a in range(30):
+        if event.is_set():
+            break
+        else:
+            print(a)
+            time.sleep(1)
 
 
-thr1 = threading.Thread(target=randNumGen, daemon=True)
+event = threading.Event()
+
+thr1 = threading.Thread(target=NumGen)
 # thr1.daemon = True
 thr1.start()
 
@@ -28,5 +32,6 @@ def greeting():
         time.sleep(1)
 
 
-# randNumGen()
 greeting()
+event.set()
+# event.clear()

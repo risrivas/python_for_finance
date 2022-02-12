@@ -79,6 +79,7 @@ python setup.py install
 
 # OOP inheritance
 - demo script: oop2.py
+- use super().__init__(<args>) or super(subclass, self).__init__(<args>)
 
 # Threads in python
 - demo script: threads.py
@@ -88,6 +89,26 @@ https://realpython.com/python-memory-management/
 - basic syntax to create thread and start
 thr1 = threading.Thread(target=randNumGen) # randNumGen is a function and dont use randNumGen()
 thr1.start()
+
+- create a daemon thread (doesn't work on spyder)
+thr1 = threading.Thread(target=randNumGen, daemon=True)
+OR
+thr1.daemon = True
+
+- use sleep as = time.sleep(1)
+
+
+# Events
+- demo script: events.py
+- concept is similar to a boolean flag
+event = threading.Event()
+if event.is_set()
+event.set()
+event.clear()
+
+
+
+
 
 
 
