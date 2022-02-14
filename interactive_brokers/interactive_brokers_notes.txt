@@ -107,6 +107,67 @@ event.set()
 event.clear()
 
 
+# HTTP Connection (Request / Response)
+Client <--> Port/socket connection : HTTP GET/POST <--> Server
+
+- High Level Architecture
+  Socket connection is established after handshake
+  HTTP GET request sent by client
+  Server checks the sanctity of the request
+  Server responds to request and transfer data
+  Connection is closed
+
+- Pull mechanism - Client (browser) needs to pull information whenever required
+- Significant overhead in opening and closing socket connections
+- Works well simple data transfers for but not practical for applications like market data streaming
+
+
+# Websocket Connection (Streaming)
+Client <--> Port/socket connection <--> Server
+
+- High Level Architecture
+  Socket connection is established
+  Bidirectional transfer of messages
+  Connection stays open until explicitly closed
+
+- Data pushed to the client whenever made available
+- Persistent connection
+- Used mostly for real-time applications such as market data streaming
+
+
+######################################
+# Understanding IB API Python Wrapper
+######################################
+- API
+https://interactivebrokers.github.io/tws-api/
+
+- API in local drive
+/Users/tanvimohan/Downloads/twsapi_macunix.976.01 2/IBJts/source/pythonclient/ibapi
+
+# EClient and EWrapper classes intro
+- EClient class is used to create the client to connect to TWS
+from ibapi.client import EClient
+
+- EWrapper class is used to translate communication between TWS and python code
+from ibapi.wrapper import EWrapper
+
+
+# Get contract information
+- class
+from ibapi.contract import Contract
+
+- in TWS, right click on ticker -> Financial Instrument Info -> Description
+example:
+app.connect("127.0.0.1", args.port, clientId=0)
+
+
+
+
+
+
+
+
+
 
 
 
