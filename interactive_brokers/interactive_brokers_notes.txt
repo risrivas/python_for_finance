@@ -151,6 +151,7 @@ from ibapi.client import EClient
 - EWrapper class is used to translate communication between TWS and python code
 from ibapi.wrapper import EWrapper
 
+- TradingApp has all the methods from wrapper
 
 # Get contract information
 - class
@@ -160,6 +161,8 @@ from ibapi.contract import Contract
 example:
 app.connect("127.0.0.1", args.port, clientId=0)
 
+
+# Async into with threads and events
 
 
 
