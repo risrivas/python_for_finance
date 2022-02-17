@@ -1,0 +1,62 @@
+###################
+# Traders' Academy
+###################
+
+###############################
+# Section: Investment Products
+###############################
+
+#########################
+# Introduction to Stocks
+#########################
+
+## Lesson 1: Intro to the Stock Market
+https://www.youtube.com/watch?v=51zPdJRqgsA
+https://tradersacademy.online/trading-topics/equities/lesson-intro-to-stocks
+
+- Stock Market is a venue to buy and sell:
+shares, funds, other financial products
+
+- Price discovery based on fundamental and technical analysis
+- Brokers and Exchanges
+- Asset classes:
+Cash, Real Estate, Property, Stocks, Bonds, Silver, Gold
+
+
+
+###############################
+# Section: IBKR Trading Tools
+###############################
+
+####################
+# IBKR Orientation
+####################
+
+## Lesson 1: Getting Started at IBKR
+https://www.youtube.com/watch?v=s7bAulHg5NU
+
+- types of investors
+Individual Investor
+Professional Trader
+Institutional Investor
+Registered Investment Advisor (RIA)
+
+- What do you need?
+1. Open an account from the IBKR website
+2. Fund your account
+3. Access and configure Trader Workstation (TWS)
+4. Subscribe to market data
+5. Configure trading privileges
+6. Access your statements and reports
+7. Advisors can access the CRM tools
+
+- Individuals support page
+https://www.interactivebrokers.com/en/support/individuals.php
+
+FAQ: How to open an account
+https://www.interactivebrokers.com/lib/cstools/faq/#/content/28224903?link=28224903
+
+FAQ: How to fund my account
+https://www.interactivebrokers.com/lib/cstools/faq/#/content/27276866?link=27276866
+
+
